@@ -77,3 +77,8 @@
             la $a0, userInput	    # pass string
             jal convertUnsignedDecimal       # subprogram
             move $t8, $v0	    # move converted number in t8
+            li $v0, 1
+            move $a0, $t9	    # print number of characters
+            syscall
+            li $v0, 11
+            li $a0, 44		    # print comma
