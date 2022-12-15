@@ -170,3 +170,8 @@ convertUnsignedDecimal:             # convertUnsignedDecimal
 	sw $ra, 0($sp)
 	lw $s4, N	            # load N base
 	li $s0, 0	            # number = 0
+	li $s1, 0	            # i = 0
+	move $s2, $a0	            # move string in s2
+	con_loop:
+	beq $s1, $a1, stop_con_loop	# check i < length
+	add $s3, $s1, $s2	    # string[i]
