@@ -26,3 +26,9 @@
 	digalpha:	.asciiz "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	userInput: .space 1000
 	N:	.word	36	# 26 + (02821059 % 11) = 26 + 10 = 36
+	M:	.word	26	# N - 10
+
+.text
+      main: 
+            li $v0, 8
+            la $a0, userInput       #This loads user input into $a0
