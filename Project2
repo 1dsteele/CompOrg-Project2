@@ -148,3 +148,6 @@ trim:                               # trim
 	sb $0, 0($s3)		    # str[i+1] = '\0'
 	
 	lw $ra, 0($sp)
+	lw $a0, 4($sp)
+	addi $sp, $sp, 8	    # deallocate space from stack
+	jr $ra	                    # return back at called address	
