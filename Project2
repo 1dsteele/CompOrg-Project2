@@ -156,3 +156,8 @@ strlen:                             # strlen
 	sl_loop:
 	lb $s1, 0($a0)	            # load byte from string
 	li $s2, 10	            # load ascii of '\n'
+	beq $s1, $s2, stop_sl_loop	# check of char is '\n' stop loop
+	beq $s1, $0, stop_sl_loop	# check of char is '\0' stop loop
+	addi $s0, $s0, 1	    # length++
+	addi $a0, $a0, 1	    # string index++
+	b sl_loop
