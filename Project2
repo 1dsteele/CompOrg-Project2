@@ -117,3 +117,8 @@ trim:                               # trim
 	beq $s0, $0, tr_out_if      # check if i is 0 then there is no space or tab
 	li $s1, 0	            # j = 0
 	tr_loop2:
+	add $s2, $s1, $a0	    # str[j]
+	add $s3, $s1, $s0	    # i + j
+	add $s3, $s3, $a0	    # str[i+j]
+	lbu $s4, 0($s3)	            # load byte from str[i+j]
+	li $s5, 10	            # load ascii of '\n'
