@@ -49,3 +49,8 @@
             addi $t3, $t1, 65	    # load triangle symbol (M-th upper letter)
             
             la $t0, userInput	    # address of userInput
+            check_illegalChar:
+            lbu $t1, 0($t0)	    # load byte from string
+            beq $t1, $0, inputIsValid     # check if string reach to end
+            li $t4, 48		    # ascii of '0'
+            blt $t1, $t4, false     # if characters less than '0' then illegal
