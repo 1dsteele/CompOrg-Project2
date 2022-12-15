@@ -207,3 +207,9 @@ indexOf:                            # indexOf
 	bne $s2, $a0, io_next       # if not match then check next
 	move $v0, $s1		    # return index
 	b stop_io_loop
+	io_next:
+	addi $s1, $s1, 1	    # index++
+	b io_loop
+	stop_io_loop:
+	
+	lw $s0, 0($sp)
