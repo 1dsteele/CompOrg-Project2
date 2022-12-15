@@ -97,3 +97,8 @@
     exit_program:
         li $v0, 10	            # 10 = code to exit
         syscall
+trim:                               # trim
+	addi $sp, $sp, -8	    # allocate space on stack to save registers
+	sw $ra, 0($sp)
+	sw $a0, 4($sp)
+	li $s0, 0		    # i = 0
