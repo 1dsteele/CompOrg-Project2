@@ -32,3 +32,9 @@
       main: 
             li $v0, 8
             la $a0, userInput       #This loads user input into $a0
+            li $a1, 1000            #This loads 1000 into $a1
+            syscall
+            
+            la $a0, userInput	    # pass string
+            jal trim		    # this subprrogram remove leading and trailing space and tab
+            la $a0, userInput	    # pass string
