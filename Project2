@@ -51,19 +51,24 @@
             la $t0, userInput	    # address of userInput
             check_illegalChar:
             lbu $t1, 0($t0)	    # load byte from string
-            beq $t1, $0, inputIsValid     # check if string reach to end
+            beq $t1, $0, inputIsValid                # check if string reach to end
             li $t4, 48		    # ascii of '0'
             blt $t1, $t4, false     # if characters less than '0' then illegal
-            li $t4, 57		# ascii of '9'
-            bgt $t1, $t4, check_UpperAlpha # if characters greater than '9' then check 'A' to M-th upper
+            li $t4, 57		    # ascii of '9'
+            bgt $t1, $t4, check_UpperAlpha           # if characters greater than '9' then check 'A' to M-th upper
             b valid
             
             
             check_UpperAlpha:
-            li $t4, 65		# ascii of 'A'
+            li $t4, 65		    # ascii of 'A'
             blt $t1, $t4, false # if characters less than 'A' then illegal
             bgt $t1, $t3, check_lowerAlpha # if characters greater than M-th Upper then check 'a' to M-th lower
             b valid
             
             check_lowerAlpha:
-            li $t4, 97		# ascii of 'a'
+            li $t4, 97		    # ascii of 'a'
+            blt $t1, $t4, false     # if characters less than 'a' then illegal
+            bgt $t1, $t2, false     # if characters greater than M-th lower then illegal
+            valid:
+            addi $t0, $t0, 1	    # str index++
+            b check_illegalChar
