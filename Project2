@@ -127,3 +127,8 @@ trim:                               # trim
 	addi $s1, $s1, 1            # j++
 	b tr_loop2
 	stop_tr_loop2:
+	tr_out_if:
+	jal strlen	            # call strlen subprogram
+	addi $s0, $v0 -1	    # i = strlen(str) - 1
+	lw $a0, 4($sp)	            # load str
+	tr_loop3:
