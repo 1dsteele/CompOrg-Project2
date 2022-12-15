@@ -202,3 +202,8 @@ indexOf:                            # indexOf
 	li $s1, 0	            # index = 0
 	io_loop:
 	add $s2, $s1, $s0           # digalpha[i]
+	lbu $s2, 0($s2)	            # load byte
+	beq $s2, $0, stop_io_loop   # end reached
+	bne $s2, $a0, io_next       # if not match then check next
+	move $v0, $s1		    # return index
+	b stop_io_loop
