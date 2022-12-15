@@ -38,3 +38,8 @@
             la $a0, userInput	    # pass string
             jal trim		    # this subprrogram remove leading and trailing space and tab
             la $a0, userInput	    # pass string
+            jal strlen		    # call subprogram to get length of string
+            beq $v0, $0, false	    # if zero character then print error message
+            li $t0, 4		    # load 4 in t0
+            bgt $v0, $t0, false     # if more than four characters then error message
+            move $t9, $v0	    # length of string
