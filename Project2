@@ -142,3 +142,9 @@ trim:                               # trim
 	keep_runn1:
 	addi $s0, $s0, -1	    # i--
 	b tr_loop3
+	stop_tr_loop3:
+	addi $s0, $s0, 1	    # i+1
+	add $s3, $s0, $a0	    # str[i+1]
+	sb $0, 0($s3)		    # str[i+1] = '\0'
+	
+	lw $ra, 0($sp)
