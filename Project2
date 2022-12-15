@@ -14,3 +14,8 @@
 # Input: A Output: 1,10 
 # Input: 012 Output: 3,32
 # Input: 100 Output: 3,900
+# Input: 1023 Output: 4,27063 
+# Input: A12t Output: 4,270989
+# Input: 12345 Output: Unrecognized input
+# Input: axyz Output: Unrecognized input 
+# Input: a  b Output: Unrecognized input
