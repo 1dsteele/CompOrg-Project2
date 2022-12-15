@@ -20,3 +20,9 @@
 # Input: axyz Output: Unrecognized input 
 # Input: a  b Output: Unrecognized input
 # Input: a@t Output: Unrecognized input 
+
+.data
+	error:		.asciiz "Unrecognized input"
+	digalpha:	.asciiz "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	userInput: .space 1000
+	N:	.word	36	# 26 + (02821059 % 11) = 26 + 10 = 36
