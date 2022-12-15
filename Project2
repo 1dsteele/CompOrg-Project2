@@ -93,3 +93,7 @@
         la $a0, error               # If errors, print a message not recognized
         syscall
         b exit_program              # Unconditionally branch to exit_program
+
+    exit_program:
+        li $v0, 10	            # 10 = code to exit
+        syscall
