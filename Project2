@@ -151,3 +151,8 @@ trim:                               # trim
 	lw $a0, 4($sp)
 	addi $sp, $sp, 8	    # deallocate space from stack
 	jr $ra	                    # return back at called address	
+strlen:                             # strlen
+	li $s0, 0	            # length = 0
+	sl_loop:
+	lb $s1, 0($a0)	            # load byte from string
+	li $s2, 10	            # load ascii of '\n'
