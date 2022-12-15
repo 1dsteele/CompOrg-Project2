@@ -112,3 +112,8 @@ trim:                               # trim
 	b stop_tr_loop1	
 	keep_runn:
 	addi $s0, $s0, 1	    # i++
+	b tr_loop1
+	stop_tr_loop1:
+	beq $s0, $0, tr_out_if      # check if i is 0 then there is no space or tab
+	li $s1, 0	            # j = 0
+	tr_loop2:
