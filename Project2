@@ -43,3 +43,9 @@
             li $t0, 4		    # load 4 in t0
             bgt $v0, $t0, false     # if more than four characters then error message
             move $t9, $v0	    # length of string
+            lw $t1, M		    # load M
+            addi $t1, $t1, -1	    # minus 1 because index start from 0
+            addi $t2, $t1, 97	    # load Beta (M-th lower letter)
+            addi $t3, $t1, 65	    # load triangle symbol (M-th upper letter)
+            
+            la $t0, userInput	    # address of userInput
