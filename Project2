@@ -137,3 +137,8 @@ trim:                               # trim
 	li $s2, 32	            # load ascii of ' '
 	beq $s1, $s2, keep_runn1    # check of char is ' ' keep running
 	li $s2, 9	            # load ascii of '\t'
+	beq $s1, $s2, keep_runn1    # check of char is '\t' keep running
+	b stop_tr_loop3	
+	keep_runn1:
+	addi $s0, $s0, -1	    # i--
+	b tr_loop3
