@@ -197,3 +197,8 @@ indexOf:                            # indexOf
 	sw $s0, 0($sp)
 	sw $s1, 4($sp)
 	sw $s2, 8($sp)
+	li $v0, -1	            # if not found return -1
+	la $s0, digalpha            # load address of digalpha
+	li $s1, 0	            # index = 0
+	io_loop:
+	add $s2, $s1, $s0           # digalpha[i]
