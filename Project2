@@ -72,3 +72,8 @@
             valid:
             addi $t0, $t0, 1	    # str index++
             b check_illegalChar
+            inputIsValid:
+            move $a1, $t9	    # pass length
+            la $a0, userInput	    # pass string
+            jal convertUnsignedDecimal       # subprogram
+            move $t8, $v0	    # move converted number in t8
