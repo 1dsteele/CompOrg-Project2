@@ -164,3 +164,9 @@ strlen:                             # strlen
 	stop_sl_loop:
 	add $v0, $0, $s0	    # return length
 	jr $ra	                    # return back at called address
+	
+convertUnsignedDecimal:             # convertUnsignedDecimal
+	addi $sp, $sp, -4
+	sw $ra, 0($sp)
+	lw $s4, N	            # load N base
+	li $s0, 0	            # number = 0
