@@ -61,3 +61,9 @@
             
             check_UpperAlpha:
             li $t4, 65		# ascii of 'A'
+            blt $t1, $t4, false # if characters less than 'A' then illegal
+            bgt $t1, $t3, check_lowerAlpha # if characters greater than M-th Upper then check 'a' to M-th lower
+            b valid
+            
+            check_lowerAlpha:
+            li $t4, 97		# ascii of 'a'
