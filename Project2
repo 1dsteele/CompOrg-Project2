@@ -3,3 +3,9 @@
 # Remove leading and trailing blank spaces and tab characters. After that
 # The program must exit after processing one single user input.
 # The conversion from the input string to a decimal number must be done in a subprogram, where the memory address of the input
+# string is passed into the subprogram via a register, and the decimal number is returned via a register.
+#The number must be printed outside the subprogram.
+
+# Sample test cases (assuming the Howard ID is 02821059): 
+# 02821059 % 11 = 10, therefore the base is 26 + 10 = 36, β is 't' and Δ is 'T'. 
+# So, N = 36
