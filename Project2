@@ -102,3 +102,8 @@ trim:                               # trim
 	sw $ra, 0($sp)
 	sw $a0, 4($sp)
 	li $s0, 0		    # i = 0
+	tr_loop1:
+	add $s3, $s0, $a0	    # str[i]
+	lbu $s1, 0($s3)	            # load byte from string
+	li $s2, 32	            # load ascii of ' '
+	beq $s1, $s2, keep_runn	    # check of char is ' ' keep running
