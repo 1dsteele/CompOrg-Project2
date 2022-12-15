@@ -192,3 +192,8 @@ convertUnsignedDecimal:             # convertUnsignedDecimal
 	lw $ra, 0($sp)
 	addi $sp, $sp, 4
 	jr $ra	                    # return back at caller address
+indexOf:                            # indexOf
+	addi $sp, $sp, -12          # allocate space on stack
+	sw $s0, 0($sp)
+	sw $s1, 4($sp)
+	sw $s2, 8($sp)
