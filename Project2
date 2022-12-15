@@ -1,0 +1,5 @@
+# Assume your Howard ID as a decimal integer is X. Let N = 26 + (X % 11) where % is the modulo operation, and M = N – 10. 
+# You will write a MIPS program that reads a string of up to 1000 characters from user input.
+# Remove leading and trailing blank spaces and tab characters. After that
+# The program must exit after processing one single user input.
+# The conversion from the input string to a decimal number must be done in a subprogram, where the memory address of the input
