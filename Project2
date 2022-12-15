@@ -190,3 +190,5 @@ convertUnsignedDecimal:             # convertUnsignedDecimal
 	stop_con_loop:
 	move $v0, $s0		    # return number
 	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	jr $ra	                    # return back at caller address
