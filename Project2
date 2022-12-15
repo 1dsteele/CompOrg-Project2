@@ -180,3 +180,8 @@ convertUnsignedDecimal:             # convertUnsignedDecimal
         blt $a0, $s5, call_subpro   # if characters less than 'a' then call
         li $s5, 122		    # ascii of 'z'
         bgt $t1, $t2, call_subpro   # if characters greater 'z' then call
+	addi $a0, $a0, -32	    # convert lower to upper
+	call_subpro:
+	jal indexOf		    # call subprogram to get index of char
+	mul $s0, $s0, $s4	    # number * N
+	add $s0, $s0, $v0	    # number * N + letter
