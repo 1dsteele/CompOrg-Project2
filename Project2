@@ -185,3 +185,8 @@ convertUnsignedDecimal:             # convertUnsignedDecimal
 	jal indexOf		    # call subprogram to get index of char
 	mul $s0, $s0, $s4	    # number * N
 	add $s0, $s0, $v0	    # number * N + letter
+	addi $s1, $s1, 1	    # i++
+	b con_loop
+	stop_con_loop:
+	move $v0, $s0		    # return number
+	lw $ra, 0($sp)
