@@ -175,3 +175,8 @@ convertUnsignedDecimal:             # convertUnsignedDecimal
 	con_loop:
 	beq $s1, $a1, stop_con_loop	# check i < length
 	add $s3, $s1, $s2	    # string[i]
+	lbu $a0, 0($s3)		    # load byte
+	li $s5, 97		    # ascii of 'a'
+        blt $a0, $s5, call_subpro   # if characters less than 'a' then call
+        li $s5, 122		    # ascii of 'z'
+        bgt $t1, $t2, call_subpro   # if characters greater 'z' then call
